@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\src\\main\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main_drawer.xml",
+        "source": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\src\\main\\res\\menu\\activity_main_drawer.xml"
+    }
+]
