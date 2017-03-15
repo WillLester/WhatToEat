@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:2:1-24:12
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml
@@ -13,67 +13,99 @@ ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:2:1-
 	android:versionCode
 		INJECTED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml
 		INJECTED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:6:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:7:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:8:5-72
+	android:name
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:8:22-69
 application
-ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:5:5-22:19
-MERGED from [com.android.support:design:25.2.0] C:\Users\Lester\.android\build-cache\b45046c210e8558c9278dcfcaef9cf359fb71246\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Lester\.android\build-cache\aeaf31dd952b69af10ec9d6a5a55da09cb1c51ee\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Lester\.android\build-cache\f4223040c5e6a93845156fd2711c09f0c863078d\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Lester\.android\build-cache\dc9eb21c6ef52774e75d210bd4bc98057671a62b\output\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:transition:25.2.0] C:\Users\Lester\.android\build-cache\3a618b1a4a462a62f2aa4fb7678a91034c2baf80\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Lester\.android\build-cache\05edbab407161ced7632044be4cc2b45666ec0e7\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Lester\.android\build-cache\c7df6e9a2a234d766ab367c66c0d2f8524cd2525\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Lester\.android\build-cache\552ed004f943d04dd6219a952b1e22df10ae208f\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Lester\.android\build-cache\19c09c1a6cad4136a11782ac1af4d9879e4d3ec5\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Lester\.android\build-cache\1f31f296a63cdb4726260894cada3c288c0c3add\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Lester\.android\build-cache\7a8f567eb9799dcf3057cf95f8e61cc028ec8b21\output\AndroidManifest.xml:25:5-20
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:10:5-35:19
+MERGED from [com.android.support:design:25.2.0] C:\Users\Lester\.android\build-cache\2e785c3127309199b85d81fe02d3c0d29322f33d\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Lester\.android\build-cache\f3637f8dc7cd2ba9b830476b95b48ec09b63fb59\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Lester\.android\build-cache\41e44e279ada8b464d4e5dc66b1279387a92d08a\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Lester\.android\build-cache\a4c3d46a1187665a2111d0a027f14e30422d4777\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Lester\.android\build-cache\27e1519932b9a5b427a36576d306ab5011ecae03\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Lester\.android\build-cache\57195e1a3642ae622ff0adeaa535e7c3b7aa4bee\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Lester\.android\build-cache\8c8f4f072314ccd7dc066c99245db2f746d92385\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Lester\.android\build-cache\5c9bee0ae6c05eefbf953faf77686b9697f227d8\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Lester\.android\build-cache\b432de8fe8b1e91057e4560f0d930be1ac8ac7ed\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Lester\.android\build-cache\a16c545b0b0a3e1ae3f72e70c0b07aeec5e78488\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Lester\.android\build-cache\a4f4c9cbf75c39cdc036ab499cef5de9685faccd\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Lester\.android\build-cache\db2b96fc95c9b28137047502d5af82d4498e7724\output\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:13:9-41
 	android:supportsRtl
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:15:9-35
 	android:roundIcon
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:14:9-54
 	android:allowBackup
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:11:9-35
 	android:icon
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:12:9-43
 	android:theme
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:11:9-40
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:16:9-40
 activity#edu.nju.whattoeat.MainActivity
-ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:12:9-21:20
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:17:9-26:20
 	android:label
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:14:13-45
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:19:13-45
 	android:theme
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:15:13-56
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:20:13-56
 	android:name
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:13:13-41
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:18:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:21:13-25:29
 action#android.intent.action.MAIN
-ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:22:17-69
 	android:name
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:22:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:24:27-74
+activity#edu.nju.whattoeat.LoginActivity
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:27:9-29:60
+	android:label
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:29:13-57
+	android:name
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:28:13-42
+activity#edu.nju.whattoeat.RegisterActivity
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:30:9-32:63
+	android:label
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:32:13-60
+	android:name
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:31:13-45
+activity#edu.nju.whattoeat.activity.user.UserInfoActivity
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:33:9-68
+	android:name
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:33:19-65
+activity#edu.nju.whattoeat.activity.recommend.RecommendActivity
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:34:9-83
+	android:name
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:34:19-71
 uses-sdk
 INJECTED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:design:25.2.0] C:\Users\Lester\.android\build-cache\b45046c210e8558c9278dcfcaef9cf359fb71246\output\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Lester\.android\build-cache\aeaf31dd952b69af10ec9d6a5a55da09cb1c51ee\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Lester\.android\build-cache\f4223040c5e6a93845156fd2711c09f0c863078d\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Lester\.android\build-cache\dc9eb21c6ef52774e75d210bd4bc98057671a62b\output\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Lester\.android\build-cache\7f4dd661e302180d30993212089a633646397f84\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.2.0] C:\Users\Lester\.android\build-cache\3a618b1a4a462a62f2aa4fb7678a91034c2baf80\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Lester\.android\build-cache\05edbab407161ced7632044be4cc2b45666ec0e7\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Lester\.android\build-cache\c7df6e9a2a234d766ab367c66c0d2f8524cd2525\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Lester\.android\build-cache\552ed004f943d04dd6219a952b1e22df10ae208f\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Lester\.android\build-cache\19c09c1a6cad4136a11782ac1af4d9879e4d3ec5\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Lester\.android\build-cache\1f31f296a63cdb4726260894cada3c288c0c3add\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Lester\.android\build-cache\7a8f567eb9799dcf3057cf95f8e61cc028ec8b21\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:design:25.2.0] C:\Users\Lester\.android\build-cache\2e785c3127309199b85d81fe02d3c0d29322f33d\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Lester\.android\build-cache\f3637f8dc7cd2ba9b830476b95b48ec09b63fb59\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Lester\.android\build-cache\41e44e279ada8b464d4e5dc66b1279387a92d08a\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Lester\.android\build-cache\a4c3d46a1187665a2111d0a027f14e30422d4777\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Lester\.android\build-cache\5c56856b4c1bfae07c536dcb3adfc4202546a9e1\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Lester\.android\build-cache\27e1519932b9a5b427a36576d306ab5011ecae03\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Lester\.android\build-cache\57195e1a3642ae622ff0adeaa535e7c3b7aa4bee\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Lester\.android\build-cache\8c8f4f072314ccd7dc066c99245db2f746d92385\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Lester\.android\build-cache\5c9bee0ae6c05eefbf953faf77686b9697f227d8\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Lester\.android\build-cache\b432de8fe8b1e91057e4560f0d930be1ac8ac7ed\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Lester\.android\build-cache\a16c545b0b0a3e1ae3f72e70c0b07aeec5e78488\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Lester\.android\build-cache\a4f4c9cbf75c39cdc036ab499cef5de9685faccd\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Lester\.android\build-cache\db2b96fc95c9b28137047502d5af82d4498e7724\output\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.2.0] C:\Users\Lester\.android\build-cache\b45046c210e8558c9278dcfcaef9cf359fb71246\output\AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.2.0] C:\Users\Lester\.android\build-cache\2e785c3127309199b85d81fe02d3c0d29322f33d\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml
 		INJECTED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml
