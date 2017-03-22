@@ -81,10 +81,10 @@ ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:30:9
 		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:32:13-60
 	android:name
 		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:31:13-45
-activity#edu.nju.whattoeat.activity.user.UserInfoActivity
-ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:33:9-68
+activity#edu.nju.whattoeat.activity.user.PersonalInfoActivity
+ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:33:9-72
 	android:name
-		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:33:19-65
+		ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:33:19-69
 activity#edu.nju.whattoeat.activity.recommend.RecommendActivity
 ADDED from D:\study\JAVA\javapro\WhatToEat\app\src\main\AndroidManifest.xml:34:9-83
 	android:name
