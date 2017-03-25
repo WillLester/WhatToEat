@@ -15,6 +15,7 @@ import java.util.List;
 
 import edu.nju.whattoeat.R;
 import edu.nju.whattoeat.activity.recommend.adapter.MessageAdapter;
+import edu.nju.whattoeat.activity.recommend.utility.AudioRecordUtils;
 import edu.nju.whattoeat.vo.Message;
 
 public class RecommendActivity extends AppCompatActivity {
@@ -25,6 +26,8 @@ public class RecommendActivity extends AppCompatActivity {
     private Button send;
     private MessageAdapter adapter;
     private List<Message> messageList = new ArrayList<>();
+
+    private AudioRecordUtils audioRecordUtils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class RecommendActivity extends AppCompatActivity {
         send = (Button) findViewById(R.id.send_msg);
         messageListView = (ListView) findViewById(R.id.msg_list_view);
         messageListView.setAdapter(adapter);
+        audioRecordUtils = new AudioRecordUtils(getApplicationContext().getFilesDir().getAbsolutePath()+"/files/records/");
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,9 +62,11 @@ public class RecommendActivity extends AppCompatActivity {
                 switch (event.getAction()){
                     case MotionEvent.ACTION_DOWN:
                         tape.setText("松开发送");
+                        audioRecordUtils.startRecord();
                         break;
                     case MotionEvent.ACTION_UP:
                         tape.setText("按住录音");
+                        audioRecordUtils.stopRecord();
                         break;
                 }
                 return true;
