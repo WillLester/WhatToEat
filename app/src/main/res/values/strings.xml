@@ -17,10 +17,13 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="error_name_repeat">This username has been used</string>
+    <string name="error_name_repeat">This email has been used</string>
+    <string name="error_name_neverused">This email hasn\'t been registered</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name ="error_age">Age field must be an integer</string>
+    <string name="error_gender">Gender field should be male or female</string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_login2">Sign in</string>
     <string name="title_activity_infor_manage">Manage Personal Information</string>

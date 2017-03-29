@@ -29,12 +29,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.nju.whattoeat.R;
+import edu.nju.whattoeat.Util.HttpCallbackListener;
+import edu.nju.whattoeat.Util.HttpUtil;
+import okhttp3.Response;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -198,11 +203,19 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             mAgeView.setError(getString(R.string.error_field_required));
             focusView = mAgeView;
             cancel  = true;
+        }else if(!isAgeValid(age)){
+            mAgeView.setError(getString(R.string.error_age));
+            focusView = mAgeView;
+            cancel  = true;
         }
 
         if(TextUtils.isEmpty(sex)){
             mSexView.setError(getString(R.string.error_field_required));
             focusView = mSexView;
+            cancel = true;
+        }else if(!isGenderValid(sex)){
+            mEmailView.setError(getString(R.string.error_gender));
+            focusView = mEmailView;
             cancel = true;
         }
 
@@ -236,6 +249,19 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         return password.length() > 4 && password.length() < 32;
     }
 
+    private boolean isGenderValid(String sex){
+        return sex.toLowerCase().equals("female") && sex.toLowerCase().equals("male");
+    }
+
+    private boolean isAgeValid(String age){
+        for( int i = 0;i < age.length();i++){
+
+            if(age.charAt(i) > '9'|| age.charAt(i) < '0'){
+                return true;
+            }
+        }
+        return false;
+    }
     /**
      * Shows the progress UI and hides the login form.
      */
@@ -334,13 +360,20 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
 
         private final String mEmail;
         private final String mPassword;
-        private final String mAge;
+        private final int  mAge;
         private final String mSex;
         private final String mPlace;
+        private boolean isValid;
+        private int error_code;
         UserRegisterTask(String email, String password,String age,String sex,String place) {
             mEmail = email;
             mPassword = password;
-            mAge = age;
+            mAge = Integer.parseInt(age);
+            if(sex.equals("Female")){
+                sex = "F";
+            }else if(sex.equals("Male")){
+                sex = "M";
+            }
             mSex = sex;
             mPlace = place;
         }
@@ -349,25 +382,56 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
 
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
+            new Thread(new Runnable(){
+                @Override
+                public void run(){
 
-//            for (String credential : DUMMY_CREDENTIALS) {
-//                String[] pieces = credential.split(":");
-//                if (pieces[0].equals(mEmail)) {
-//                    // Account exists, return true if the password matches.
-//                    return pieces[1].equals(mPassword);
-//                }
-//            }
+                    String address = "http://host:8080/wte/register";
+                    try{
+                        JSONObject login = new JSONObject();
+                        login.put("mail",mEmail);
+                        login.put("password",mPassword);
+                        login.put("age",mAge);
+                        login.put("gender",mSex);
+                        login.put("place",mPlace);
+                        HttpUtil.sendHttpRequestPost(address, login, new HttpCallbackListener() {
+                            @Override
+                            public void onFinish(Response response) {
+                                try{
+                                    String responseData = response.body().string();
+                                    JSONArray jsonArray = new JSONArray(responseData);
+                                    JSONObject jsonObject = jsonArray.getJSONObject(0);
 
-            // TODO: register the new account here.
-            return true;
+
+                                    if(jsonObject.getString("status").equals("success")){
+                                        isValid = true;
+                                    }else if(jsonObject.getString("status").equals("failure")){
+                                        isValid = false;
+                                        error_code = Integer.parseInt(jsonObject.getString("err_code"));
+                                    }
+
+                                }catch(Exception e){
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+                                e.printStackTrace();
+                            }
+                        });
+
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+
+
+            return isValid;
+
+
         }
-
         @Override
         protected void onPostExecute(final Boolean success) {
             mAuthTask = null;

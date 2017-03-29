@@ -57,13 +57,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
-     * A dummy authentication store containing known user names and passwords.
-     * TODO: remove after connecting to a real authentication system.
-     */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
-    /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
@@ -209,7 +202,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() > 4 && password.length() < 32;
     }
 
     /**
@@ -311,6 +304,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private final String mEmail;
         private final String mPassword;
         private boolean isValid;
+        private int error_code;
 
         UserLoginTask(String email, String password) {
             mEmail = email;
@@ -325,8 +319,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             new Thread(new Runnable(){
                 @Override
                 public void run(){
-                    HttpURLConnection connection = null;
-                    BufferedReader reader = null;
+
                     String address = "http://host:8080/wte/login";
                     try{
                         JSONObject login = new JSONObject();
@@ -345,6 +338,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                                         isValid = true;
                                     }else if(jsonObject.getString("status").equals("failure")){
                                         isValid = false;
+                                        error_code = Integer.parseInt(jsonObject.getString("err_code"));
                                     }
 
                                 }catch(Exception e){
@@ -365,18 +359,27 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }).start();
 //
 //            // TODO: register the new account here.
-              return isValid;
+            this.onPostExecute(isValid,error_code);
+            return isValid;
+
         }
 
         @Override
-        protected void onPostExecute(final Boolean success) { //线程结束后的ui处理
+        protected  void onPostExecute(final Boolean success){
+
+        }
+//        @Override
+        protected void onPostExecute(final Boolean success,int error_code) { //线程结束后的ui处理
             mAuthTask = null;
             showProgress(false);//隐藏验证延时对话框
 
             if (success) {
                 finish();
-            } else {//密码错误，输入框获得焦点，并提示错误
+            }else if(error_code == 2) {//密码错误，输入框获得焦点，并提示错误
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.requestFocus();
+            }else if(error_code == 1){
+                mEmailView.setError(getString(R.string.error_name_neverused));
                 mPasswordView.requestFocus();
             }
         }
