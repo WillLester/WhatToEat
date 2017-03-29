@@ -1,7 +1,7 @@
 [
     {
         "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
-        "source": "C:\\Users\\Lester\\.android\\build-cache\\2e785c3127309199b85d81fe02d3c0d29322f33d\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+        "source": "C:\\Users\\Lester\\.android\\build-cache\\eced45f7b0b7846a95ca8e22d683d3d9dec5f41a\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
     },
     {
         "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
@@ -9,10 +9,14 @@
     },
     {
         "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+<<<<<<< HEAD
         "source": "C:\\Users\\Lester\\.android\\build-cache\\2e785c3127309199b85d81fe02d3c0d29322f33d\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
     {
         "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
         "source": "C:\\Users\\st0001\\.android\\build-cache\\161d83b092e21609f3a5b816db0aa09421b5661c\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+=======
+        "source": "C:\\Users\\Lester\\.android\\build-cache\\eced45f7b0b7846a95ca8e22d683d3d9dec5f41a\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+>>>>>>> 7c42f9895bcaafef7fa987952a064e53c5fc74c3
     }
 ]

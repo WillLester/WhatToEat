@@ -11,6 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+<<<<<<< HEAD
+=======
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/next_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下一次推荐"/>
+        </LinearLayout>
+>>>>>>> 7c42f9895bcaafef7fa987952a064e53c5fc74c3
         <ListView
             android:id="@+id/msg_list_view"
             android:layout_width="match_parent"
