@@ -318,8 +318,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
 
             for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
+                String[] pieces = credential.split(":");//遍历数组验证自定义用户及密码
+                if (pieces[0].equals(mEmail)) { //分割字符串，将邮箱和密码分离
                     // Account exists, return true if the password matches.
                     return pieces[1].equals(mPassword);
                 }
@@ -330,18 +330,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
 
         @Override
-        protected void onPostExecute(final Boolean success) {
+        protected void onPostExecute(final Boolean success) { //线程结束后的ui处理
             mAuthTask = null;
-            showProgress(false);
+            showProgress(false);//隐藏验证延时对话框
 
             if (success) {
                 finish();
-            } else {
+            } else {//密码错误，输入框获得焦点，并提示错误
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
             }
         }
-
+        //取消验证
         @Override
         protected void onCancelled() {
             mAuthTask = null;

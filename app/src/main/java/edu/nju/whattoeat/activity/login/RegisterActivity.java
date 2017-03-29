@@ -29,6 +29,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,11 +58,15 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
-    private UserLoginTask mAuthTask = null;
+    private UserRegisterTask mAuthTask = null;
 
     // UI references.
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
+    private EditText mAgeView;
+    private EditText mSexView;
+
+    private EditText mPlaceView;
     private View mProgressView;
     private View mLoginFormView;
 
@@ -73,11 +79,14 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         populateAutoComplete();
 
         mPasswordView = (EditText) findViewById(R.id.password);
+        mAgeView = (EditText)findViewById(R.id.age);
+        mSexView = (EditText)findViewById(R.id.sex);
+        mPlaceView = (EditText)findViewById(R.id.place);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
+                    attemptRegister();
                     return true;
                 }
                 return false;
@@ -88,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                attemptRegister();
             }
         });
 
@@ -145,7 +154,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private void attemptLogin() {
+    private void attemptRegister() {
         if (mAuthTask != null) {
             return;
         }
@@ -153,10 +162,16 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
         // Reset errors.
         mEmailView.setError(null);
         mPasswordView.setError(null);
+        mAgeView.setError(null);
+        mPlaceView.setError(null);
+        mSexView.setError(null);
 
         // Store values at the time of the login attempt.
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
+        String age = mAgeView.getText().toString();
+        String place = mPlaceView.getText().toString();
+        String sex = mPlaceView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -179,6 +194,25 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             cancel = true;
         }
 
+        if(TextUtils.isEmpty(age)){
+            mAgeView.setError(getString(R.string.error_field_required));
+            focusView = mAgeView;
+            cancel  = true;
+        }
+
+        if(TextUtils.isEmpty(sex)){
+            mSexView.setError(getString(R.string.error_field_required));
+            focusView = mSexView;
+            cancel = true;
+        }
+
+        if(TextUtils.isEmpty(place)){
+            mPlaceView.setError(getString(R.string.error_field_required));
+            focusView = mPlaceView;
+            cancel = true;
+        }
+
+
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
@@ -187,7 +221,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
+            mAuthTask = new UserRegisterTask(email, password,age,sex,place);
             mAuthTask.execute((Void) null);
         }
     }
@@ -199,7 +233,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() > 4 && password.length() < 32;
     }
 
     /**
@@ -296,14 +330,19 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    public class UserRegisterTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
         private final String mPassword;
-
-        UserLoginTask(String email, String password) {
+        private final String mAge;
+        private final String mSex;
+        private final String mPlace;
+        UserRegisterTask(String email, String password,String age,String sex,String place) {
             mEmail = email;
             mPassword = password;
+            mAge = age;
+            mSex = sex;
+            mPlace = place;
         }
 
         @Override
@@ -317,13 +356,13 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
-            }
+//            for (String credential : DUMMY_CREDENTIALS) {
+//                String[] pieces = credential.split(":");
+//                if (pieces[0].equals(mEmail)) {
+//                    // Account exists, return true if the password matches.
+//                    return pieces[1].equals(mPassword);
+//                }
+//            }
 
             // TODO: register the new account here.
             return true;
@@ -337,7 +376,7 @@ public class RegisterActivity extends AppCompatActivity implements LoaderCallbac
             if (success) {
                 finish();
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
+                mPasswordView.setError(getString(R.string.error_name_repeat));
                 mPasswordView.requestFocus();
             }
         }

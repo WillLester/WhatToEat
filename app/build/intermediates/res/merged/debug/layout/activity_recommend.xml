@@ -5,8 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edu.nju.whattoeat.activity.recommend.RecommendActivity">
+
     <LinearLayout
+        android:background="#d8e0e8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ListView
+            android:id="@+id/msg_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="#0000">
+
+        </ListView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/input_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="请输入您的消息"
+                android:maxLines="6" />
+
+            <Button
+                android:id="@+id/send_voice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="按住录音" />
+
+            <Button
+                android:id="@+id/send_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送" />
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

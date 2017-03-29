@@ -4,8 +4,20 @@
         "source": "C:\\Users\\Lester\\.android\\build-cache\\f3637f8dc7cd2ba9b830476b95b48ec09b63fb59\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\st0001\\.android\\build-cache\\161d83b092e21609f3a5b816db0aa09421b5661c\\output\\res\\drawable-v21\\avd_hide_password.xml"
+    },
+    {
         "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
         "source": "C:\\Users\\Lester\\.android\\build-cache\\2e785c3127309199b85d81fe02d3c0d29322f33d\\output\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\st0001\\.android\\build-cache\\d59de88d0a6af4f775e96b6b6a92292f249b93a8\\output\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\st0001\\.android\\build-cache\\d59de88d0a6af4f775e96b6b6a92292f249b93a8\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
         "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
@@ -20,6 +32,14 @@
         "source": "C:\\Users\\Lester\\.android\\build-cache\\f3637f8dc7cd2ba9b830476b95b48ec09b63fb59\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\st0001\\.android\\build-cache\\d59de88d0a6af4f775e96b6b6a92292f249b93a8\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\st0001\\.android\\build-cache\\161d83b092e21609f3a5b816db0aa09421b5661c\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+    },
+    {
         "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
         "source": "C:\\Users\\Lester\\.android\\build-cache\\f3637f8dc7cd2ba9b830476b95b48ec09b63fb59\\output\\res\\drawable-v21\\notification_action_background.xml"
     },
@@ -28,7 +48,19 @@
         "source": "C:\\Users\\Lester\\.android\\build-cache\\2e785c3127309199b85d81fe02d3c0d29322f33d\\output\\res\\drawable-v21\\avd_hide_password.xml"
     },
     {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\st0001\\.android\\build-cache\\161d83b092e21609f3a5b816db0aa09421b5661c\\output\\res\\drawable-v21\\design_password_eye.xml"
+    },
+    {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\st0001\\.android\\build-cache\\161d83b092e21609f3a5b816db0aa09421b5661c\\output\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
         "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
         "source": "C:\\Users\\Lester\\.android\\build-cache\\f3637f8dc7cd2ba9b830476b95b48ec09b63fb59\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\st0001\\.android\\build-cache\\d59de88d0a6af4f775e96b6b6a92292f249b93a8\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     }
 ]

@@ -1,7 +1,15 @@
 [
     {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
+        "source": "E:\\WhatToEat\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
         "source": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
+        "source": "E:\\WhatToEat\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
         "merged": "D:\\study\\JAVA\\javapro\\WhatToEat\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
