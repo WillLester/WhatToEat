@@ -50,7 +50,17 @@ public class IndexActivity extends AppCompatActivity {
         dishListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent,View view, int position,long id){
+                Dish dish= dishList.get(position);
                 Intent intent = new Intent(IndexActivity.this, DishDetailActivity.class);
+                intent.putExtra("name",dish.getName());
+                intent.putExtra("mainstance",dish.getMainSubstance());
+                intent.putExtra("substance",dish.getSubstance());
+                intent.putExtra("operation",dish.getOperation());
+                intent.putExtra("taste",dish.getTaste());
+                intent.putExtra("time",dish.getTime_to_eat());
+                intent.putExtra("place",dish.getPlace());
+                intent.putExtra("kind",dish.getKind());
+                intent.putExtra("nutrition",dish.getNutrition());
                 startActivity(intent);
             }
         });
