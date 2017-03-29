@@ -25,6 +25,7 @@ public class HttpUtil {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                getJson(address,listener);
 //                HttpURLConnection connection = null;
 //                try{
 //                    URL url = new URL(address);
@@ -119,6 +120,24 @@ public class HttpUtil {
            if(listener != null){
                listener.onError(e);
            }
+        }
+    }
+
+    private static void getJson(String address, final HttpCallbackListener listener){
+        OkHttpClient okHttpClient = new OkHttpClient();
+        //构建一个请求对象
+        Request request = new Request.Builder().url(address).build();
+        //发送请求
+        try {
+            Response response = okHttpClient.newCall(request).execute();
+            if(listener != null){
+                listener.onFinish(response);
+            }
+
+        } catch (IOException e) {
+            if(listener != null){
+                listener.onError(e);
+            }
         }
     }
 

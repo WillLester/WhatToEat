@@ -22,7 +22,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name ="error_age">Age field must be an integer</string>
+    <string name="error_age">Age field must be an integer</string>
     <string name="error_gender">Gender field should be male or female</string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_login2">Sign in</string>

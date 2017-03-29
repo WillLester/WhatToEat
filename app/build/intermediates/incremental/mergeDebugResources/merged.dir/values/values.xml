@@ -687,11 +687,14 @@
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="error_age">Age field must be an integer</string>
     <string name="error_field_required">This field is required</string>
+    <string name="error_gender">Gender field should be male or female</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
-    <string name="error_name_repeat">This username has been used</string>
+    <string name="error_name_neverused">This email hasn\'t been registered</string>
+    <string name="error_name_repeat">This email has been used</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
