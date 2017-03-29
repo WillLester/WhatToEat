@@ -38,7 +38,7 @@ public class IndexActivity extends AppCompatActivity {
         userInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(IndexActivity.this, PersonalInfoActivity.class);
+                Intent intent = new Intent(IndexActivity.this, InfoManageActivity.class);
                 startActivity(intent);
             }
         });
