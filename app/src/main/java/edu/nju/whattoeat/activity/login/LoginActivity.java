@@ -29,10 +29,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.nju.whattoeat.R;
+import edu.nju.whattoeat.Util.HttpCallbackListener;
+import edu.nju.whattoeat.Util.HttpUtil;
+import okhttp3.Response;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -300,6 +310,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         private final String mEmail;
         private final String mPassword;
+        private boolean isValid;
 
         UserLoginTask(String email, String password) {
             mEmail = email;
@@ -308,25 +319,53 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         @Override
         protected Boolean doInBackground(Void... params) {
-            // TODO: attempt authentication against a network service.
+            //  attempt authentication against a network service.
 
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");//遍历数组验证自定义用户及密码
-                if (pieces[0].equals(mEmail)) { //分割字符串，将邮箱和密码分离
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+            new Thread(new Runnable(){
+                @Override
+                public void run(){
+                    HttpURLConnection connection = null;
+                    BufferedReader reader = null;
+                    String address = "http://host:8080/wte/login";
+                    try{
+                        JSONObject login = new JSONObject();
+                        login.put("mail",mEmail);
+                        login.put("password",mPassword);
+                        HttpUtil.sendHttpRequestPost(address, login, new HttpCallbackListener() {
+                            @Override
+                            public void onFinish(Response response) {
+                                try{
+                                    String responseData = response.body().string();
+                                    JSONArray jsonArray = new JSONArray(responseData);
+                                    JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+
+                                    if(jsonObject.getString("status").equals("success")){
+                                        isValid = true;
+                                    }else if(jsonObject.getString("status").equals("failure")){
+                                        isValid = false;
+                                    }
+
+                                }catch(Exception e){
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void onError(Exception e) {
+                                e.printStackTrace();
+                            }
+                        });
+
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
                 }
-            }
-
-            // TODO: register the new account here.
-            return true;
+            }).start();
+//
+//            // TODO: register the new account here.
+              return isValid;
         }
 
         @Override

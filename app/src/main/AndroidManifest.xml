@@ -29,16 +29,14 @@
             android:label="@string/title_activity_register" />
         <activity android:name=".activity.user.PersonalInfoActivity" />
         <activity android:name=".activity.recommend.RecommendActivity" />
-<<<<<<< HEAD
+
         <activity
-            android:name=".InforManageActivity"
+            android:name=".activity.user.InfoManageActivity"
             android:label="@string/title_activity_infor_manage" />
-        <activity
-            android:name=".InfoManageActivity"
-            android:label="@string/title_activity_info_manage"></activity>
-=======
+
+
         <activity android:name=".activity.user.IndexActivity"></activity>
->>>>>>> 7c42f9895bcaafef7fa987952a064e53c5fc74c3
+
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package edu.nju.whattoeat.activity.login;
+package edu.nju.whattoeat.activity.user;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
