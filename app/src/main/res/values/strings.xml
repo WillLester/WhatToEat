@@ -23,4 +23,6 @@
     </string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_login2">Sign in</string>
+    <string name="title_activity_infor_manage">Manage Personal Information</string>
+    <string name="title_activity_info_manage">Manage User Information</string>
 </resources>

@@ -72,7 +72,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Age"
-                    android:inputType="textPassword"
+
+                    android:inputType="number"
                     android:maxLines="1"
                     />
             </android.support.design.widget.TextInputLayout>
@@ -84,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Sex"
-                    android:inputType="textPassword"
+
                     android:maxLines="1"
                     />
             </android.support.design.widget.TextInputLayout>
@@ -96,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Place"
-                    android:inputType="textPassword"
+                   
                     android:maxLines="1"
                     />
             </android.support.design.widget.TextInputLayout>
